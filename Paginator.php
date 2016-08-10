@@ -172,8 +172,8 @@ class Paginator{
     private function uri()
     {
         $urlProtocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
-        $uri = $urlProtocol.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-
+        $removeParameter = strtok(trim($_SERVER['REQUEST_URI'], '/'), '?');
+        $uri = $urlProtocol.$_SERVER['HTTP_HOST'].'/'.$removeParameter;
         return $uri;
     }
 
