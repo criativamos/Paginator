@@ -107,6 +107,15 @@ class Paginator{
     }
 
     /**
+     * @param array $parameters
+     */
+    public function setParameters($parameters = [])
+    {
+        if(is_array($parameters) && count($parameters) > 0)
+            $this->parameters = $parameters;
+    }
+
+    /**
      * @return int
      */
     private function currentPage()
