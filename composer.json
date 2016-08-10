@@ -1,0 +1,10 @@
+{
+  "name": "criativamos/paginator",
+  "description": "A simple PHP library to create pagination",
+  "keywords": ["pagination", "criativamos", "library"],
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": ">=5.5"
+  }
+}
