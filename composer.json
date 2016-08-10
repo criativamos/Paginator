@@ -13,10 +13,5 @@
       "name": "Diogo Brito",
       "email": "diogo.brito7@gmail.com"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "criativamos\\paginator\\": ""
-    }
-  }
+  ]
 }
