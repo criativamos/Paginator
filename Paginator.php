@@ -200,9 +200,11 @@ class Paginator{
         $uri = $this->uri();
         if($this->currentPage() > 0) {
             $urlParameters = $_GET;
-            $urlParameters[$this->pageVar] = (int) $urlParameters[$this->pageVar] - 1;
-            $buildUrlQuery = http_build_query($urlParameters);
-            $uri .= '?'.$buildUrlQuery;
+            if(isset($urlParameters[$this->pageVar])) {
+                $urlParameters[$this->pageVar] = (int)$urlParameters[$this->pageVar] - 1;
+                $buildUrlQuery = http_build_query($urlParameters);
+                $uri .= '?' . $buildUrlQuery;
+            }
         }
 
         return $uri;
@@ -213,9 +215,11 @@ class Paginator{
         $uri = $this->uri();
         if($this->currentPage() > 0) {
             $urlParameters = $_GET;
-            $urlParameters[$this->pageVar] = (int) $urlParameters[$this->pageVar];
-            $buildUrlQuery = http_build_query($urlParameters);
-            $uri .= '?'.$buildUrlQuery;
+            if(isset($urlParameters[$this->pageVar])) {
+                $urlParameters[$this->pageVar] = (int)$urlParameters[$this->pageVar];
+                $buildUrlQuery = http_build_query($urlParameters);
+                $uri .= '?' . $buildUrlQuery;
+            }
         }
 
         return $uri;
