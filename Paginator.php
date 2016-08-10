@@ -156,7 +156,7 @@ class Paginator{
             $this->results['from'] = $offset + 1;
             $this->results['to'] = $last;
 
-            $limit = $last . ', ' . $this->resultsPerPage;
+            $limit = $offset . ', ' . $this->resultsPerPage;
         }
 
         return ' LIMIT ' . $limit;
