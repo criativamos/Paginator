@@ -4,7 +4,19 @@
   "keywords": ["pagination", "criativamos", "library"],
   "license": "MIT",
   "type": "library",
+  "minimum-stability": "stable",
   "require": {
     "php": ">=5.5"
+  },
+  "authors": [
+    {
+      "name": "Diogo Brito",
+      "email": "diogo.brito7@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "criativamos\\paginator\\": ""
+    }
   }
 }
