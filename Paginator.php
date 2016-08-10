@@ -62,7 +62,7 @@ class Paginator{
 
     /**
      * Paginator constructor.
-     * @param PDO $databaseConnection
+     * @param \PDO $databaseConnection
      * @param null $query
      * @param int $resultsPerPage
      */
@@ -119,7 +119,7 @@ class Paginator{
      */
     private function total()
     {
-        $pattern = '/^(?:SELECT)(.+)(?:FROM)/i';
+        $pattern = '/^(?:SELECT)(.+)(?:FROM)/is';
         preg_match($pattern, $this->originalQuery, $matches);
         $query = str_replace($matches[1], ' COUNT(0) AS TOTAL ', $this->originalQuery);
         $stmt = $this->db->prepare($query);
