@@ -1,4 +1,7 @@
 <?php
+
+namespace Criativamos\Paginator;
+
 /**
  * Class Paginator
  */
