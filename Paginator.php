@@ -260,8 +260,6 @@ class Paginator{
             $this->results['perPage'] = $this->resultsPerPage;
             //Last Page
             $lastPage = ceil($this->results['total'] / $this->resultsPerPage);
-            if($lastPage > 0 && $this->results['total'] % $lastPage == 0)
-                $lastPage = $lastPage - 1;
             $this->results['lastPage'] = $lastPage < 1 ? 1 : $lastPage;
             //Next URL
             $this->results['nextPageUrl'] = $this->nextUrl();
