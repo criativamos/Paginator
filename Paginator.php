@@ -42,8 +42,8 @@ class Paginator{
     /**
      * @var int
      */
-    private $navLimit = 5;
-
+//    private $navLimit = 5;
+//
     /**
      * @var array
      */
@@ -260,7 +260,7 @@ class Paginator{
             $this->results['perPage'] = $this->resultsPerPage;
             //Last Page
             $lastPage = ceil($this->results['total'] / $this->resultsPerPage);
-            if($this->results['total'] % $lastPage == 0)
+            if($lastPage > 0 && $this->results['total'] % $lastPage == 0)
                 $lastPage = $lastPage - 1;
             $this->results['lastPage'] = $lastPage < 1 ? 1 : $lastPage;
             //Next URL

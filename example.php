@@ -46,7 +46,6 @@ try {
                 <?php
                     //Example case
                     $query = "SELECT * FROM mock_data";
-
                     $pg = new \Criativamos\Paginator\Paginator($db, $query, 10);
                     if($pg->rowCount() > 0){
                         foreach ($pg->getData() as $data){
@@ -58,7 +57,6 @@ try {
                             echo '</tr>';
                         }
                     }
-
                 ?>
                 </tbody>
             </table>
