@@ -132,9 +132,13 @@ class Paginator{
         preg_match($pattern, $this->originalQuery, $matches);
         $query = str_replace($matches[1], ' COUNT(0) AS TOTAL ', $this->originalQuery);
         $stmt = $this->db->prepare($query);
-        $stmt->execute($this->parameters);
-        $this->results['total'] = (int) $stmt->fetch(\PDO::FETCH_OBJ)->TOTAL;
-
+        $executed = $stmt->execute($this->parameters);
+        if($executed) {
+            $data = $stmt->fetch(\PDO::FETCH_OBJ);
+            if($data) {
+                $this->results['total'] = (int) $data->TOTAL;
+            }
+        }
         return $this->results['total'];
     }
 
